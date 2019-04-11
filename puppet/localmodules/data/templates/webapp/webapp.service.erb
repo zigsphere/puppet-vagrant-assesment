@@ -1,0 +1,12 @@
+[Unit]
+Description=webapp
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/vagrant/app
+ExecStart=/vagrant/app/go-webapp
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

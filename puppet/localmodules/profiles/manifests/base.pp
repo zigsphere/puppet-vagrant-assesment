@@ -12,4 +12,10 @@ class profiles::base {
     ensure => 'stopped',
   }
 
+  file { '/etc/motd':
+    ensure  => file,
+    mode    => '0644',
+    content => "Hostname: ${facts['fqdn']}\nRole: ${facts['role']}\n",
+  }
+
 }
